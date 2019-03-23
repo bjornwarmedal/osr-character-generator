@@ -26,4 +26,11 @@ The character generation is self-sufficient, but the two libraries for creating 
 - [jsPDF][] does not embed fonts. This may cause issues with some printers.
 - Some versions of [jsPDF][] seem to render the business cards horribly: distances -- especially vertically -- are completely off and the font size is most certainly *not* in points as documented. This is confirmed with at least version 1.5.3. Oddly, the A5 character sheets work just fine.
 
+## Contribution Guidelines
+
+Two guidelines are important to adhere to:
+
+- Developers working in this project should not have to learn trendy frameworks to understand or contribute. The functionality is very basic. Let's not complicate it.
+- It must run in the client only. A static html file on your hard drive, opened in your browser, should be enough to use this. No database or other backend. Nobody wants to have to maintain and operate that.
+
 [jsPDF]: https://github.com/MrRio/jsPDF
