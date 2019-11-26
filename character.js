@@ -36,7 +36,7 @@ function tds(){
 function shuffle(array) {
 	for (var i = array.length - 1; i > 0; i--) {
 		var rand = Math.floor(Math.random() * (i + 1));
-		[charclass[i], charclass[rand]] = [charclass[rand], charclass[i]]
+		[array[i], array[rand]] = [array[rand], array[i]]
 	}
 }
 
