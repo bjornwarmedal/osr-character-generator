@@ -33,6 +33,13 @@ function tds(){
 	return d(6) + d(6) + d(6)
 }
 
+function shuffle(array) {
+	for (var i = array.length - 1; i > 0; i--) {
+		var rand = Math.floor(Math.random() * (i + 1));
+		[charclass[i], charclass[rand]] = [charclass[rand], charclass[i]]
+	}
+}
+
 function Character(){
 	this.name = getName()
 
@@ -43,8 +50,36 @@ function Character(){
 	this.wis = tds()
 	this.cha = tds()
 
+	//First pick a random class
 	var charclass = choice(['Fighter','Magic-User','Thief','Cleric','Elf','Dwarf','Halfling'], 1)
 	this.charclass = charclass[0] // because choice returns an array with one element
+	shuffle(charclass)
+
+	//Then check in random order if another class would be better, if so, pick that instead and continue creating the charcter, simulating a player who is impatient to start playing. :)
+	for (var i = 0; i < charclass.length; i++) {
+		if (charclass[i] === 'Fighter' && this.str > 12) {
+			this.charclass = charclass[i]
+			break;
+		} else if (charclass[i] === 'Magic-User' && this.inn > 12) {
+			this.charclass = charclass[i]
+			break;
+		} else if (charclass[i] === 'Thief' && this.dex > 12) {
+			this.charclass = charclass[i]
+			break;
+		} else if (charclass[i] === 'Cleric' && this.wis > 12) {
+			this.charclass = charclass[i]
+			break;
+		} else if (charclass[i] === 'Elf' && this.str > 12 && this.inn > 12) {
+			this.charclass = charclass[i]
+			break;
+		} else if (charclass[i] === 'Dwarf' && this.str > 12 && this.con > 12) {
+			this.charclass = charclass[i]
+			break;
+		} else if (charclass[i] === 'Halfling' && this.str > 12 && this.dex > 12) {
+			this.charclass = charclass[i]
+			break;
+		}
+	}
 
 	switch(this.charclass) {
 		case 'Fighter': this.hd = 8; break;
