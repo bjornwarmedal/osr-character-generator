@@ -52,8 +52,8 @@ function Character(){
 
 	//First pick a random class
 	var charclass = choice(['Fighter','Magic-User','Thief','Cleric','Elf','Dwarf','Halfling'], 1)
-	this.charclass = charclass[0] // because choice returns an array with one element
 	shuffle(charclass)
+	this.charclass = charclass[0] // because choice returns an array with one element
 
 	//Then check in random order if another class would be better, if so, pick that instead and continue creating the charcter, simulating a player who is impatient to start playing. :)
 	for (var i = 0; i < charclass.length; i++) {
