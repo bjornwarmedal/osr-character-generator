@@ -167,8 +167,8 @@ function Character(){
 	}
 
 	// add a bag of some kind, and four more random items
-	var items = ['Warm Blanket','Block and Tackle','Bottle of Wine','Candles (10)','Chain (10 feet)','Crowbar','Flask (empty)','Flint and Steel','Garlic (3 cloves)','Grappling Hook','Hammer, 5 iron spikes','Holy Symbol (silver)','Holy Water (flask)','Ink and Quill','Ladder (10 feet)','Lantern','Padlock, key','Manacles','Small Mirror','Oil (1 pint)','Paper (10 sheets)','Parchment (10 sheets)','Miner\'s Pick','Pole (10 feet)','Rations (5 days)','Rope (50 feet)','Spade','Shovel','Iron Spikes (12)','Spyglass','Torches (8)','Waterskin','Wolfsbane (fistfull)','Lard (1lbs)','Acid (1 vial)','Flour (2 lbs)']
-	this.stuff.push(choice(['Backpack','Small Sack','Large Sack','Saddle Bag','Messenger Bag'], 1).toString() + ', Bedroll')
+	var items = ['Block and Tackle','Bottle of Wine','Candles (10)','Chain (10 feet)','Crowbar','Flask (empty)','Flint and Steel','Garlic (3 cloves)','Grappling Hook','Hammer, 5 iron spikes','Holy Symbol (silver)','Holy Water (flask)','Ink and Quill','Ladder (10 feet)','Lantern','Padlock, key','Manacles','Small Mirror','Oil (1 pint)','Paper (10 sheets)','Parchment (10 sheets)','Miner\'s Pick','Pole (10 feet)','Rations (5 days)','Rope (50 feet)','Spade','Shovel','Iron Spikes (12)','Spyglass','Torches (8)','Waterskin','Wolfsbane (fistfull)','Lard (1lbs)','Acid (1 vial)','Flour (2 lbs)']
+	this.stuff.push(choice(['Backpack','Small Sack','Large Sack','Saddle Bag','Messenger Bag','Bindle'], 1).toString() + ', ' + choice(['Bedroll','Warm Blanket'],1))
 	if(this.charclass == 'Elf' || this.charclass == 'Magic-User'){
 		this.stuff.push('Spellbook')
 		this.stuff = this.stuff.concat(choice(items, 3))
