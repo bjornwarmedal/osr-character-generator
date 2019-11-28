@@ -51,32 +51,33 @@ function Character(){
 	this.cha = tds()
 
 	//First pick a random class
-	var charclass = choice(['Fighter','Magic-User','Thief','Cleric','Elf','Dwarf','Halfling'], 1)
-	shuffle(charclass)
+	let array = ['Fighter','Magic-User','Thief','Cleric','Elf','Dwarf','Halfling'];
+	var charclass = choice(array, 1)
+	shuffle(array)
 	this.charclass = charclass[0] // because choice returns an array with one element
 
 	//Then check in random order if another class would be better, if so, pick that instead and continue creating the charcter, simulating a player who is impatient to start playing. :)
-	for (var i = 0; i < charclass.length; i++) {
-		if (charclass[i] === 'Fighter' && this.str > 12) {
-			this.charclass = charclass[i]
+	for (var i = 0; i < array.length; i++) {
+		if (array[i] === 'Fighter' && this.str > 12) {
+			this.charclass = array[i]
 			break;
-		} else if (charclass[i] === 'Magic-User' && this.inn > 12) {
-			this.charclass = charclass[i]
+		} else if (array[i] === 'Magic-User' && this.inn > 12) {
+			this.charclass = array[i]
 			break;
-		} else if (charclass[i] === 'Thief' && this.dex > 12) {
-			this.charclass = charclass[i]
+		} else if (array[i] === 'Thief' && this.dex > 12) {
+			this.charclass = array[i]
 			break;
-		} else if (charclass[i] === 'Cleric' && this.wis > 12) {
-			this.charclass = charclass[i]
+		} else if (array[i] === 'Cleric' && this.wis > 12) {
+			this.charclass = array[i]
 			break;
-		} else if (charclass[i] === 'Elf' && this.str > 12 && this.inn > 12) {
-			this.charclass = charclass[i]
+		} else if (array[i] === 'Elf' && this.str > 12 && this.inn > 12) {
+			this.charclass = array[i]
 			break;
-		} else if (charclass[i] === 'Dwarf' && this.str > 12 && this.con > 12) {
-			this.charclass = charclass[i]
+		} else if (array[i] === 'Dwarf' && this.str > 12 && this.con > 12) {
+			this.charclass = array[i]
 			break;
-		} else if (charclass[i] === 'Halfling' && this.str > 12 && this.dex > 12) {
-			this.charclass = charclass[i]
+		} else if (array[i] === 'Halfling' && this.str > 12 && this.dex > 12) {
+			this.charclass = array[i]
 			break;
 		}
 	}
