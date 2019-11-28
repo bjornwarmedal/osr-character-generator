@@ -7,11 +7,6 @@ function makeCharacters(nr){
 	  format: [55, 90]
 	})
 
-	function toCoord(n) {
-		h = doc.internal.pageSize.getHeight()
-		w = doc.internal.pageSize.getWidth()
-	}
-
 	for (let i=0; i<nr; i++){
 		// You can write your coordinates in mm if you divide by this motherfucker right here.
 		// source: https://github.com/MrRio/jsPDF/blob/ddbfc0f0250ca908f8061a72fa057116b7613e78/jspdf.js#L791
