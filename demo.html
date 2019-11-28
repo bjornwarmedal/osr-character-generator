@@ -1,0 +1,29 @@
+<html>
+	<head>
+		<script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script>
+		<script src="character.js"></script>
+		<script src="names.js"></script>
+		<script src="adventurersheetsA5.js"></script>
+		<script src="adventurerbusinesscards.js"></script>
+		<script type="text/javascript">
+			function runMakeCharacters(){
+				makeCharacters(document.getElementById('nr').value)
+			}
+			function runMakeCharactersA5(){
+				makeCharactersA5(document.getElementById('nr').value, false)
+			}
+			function runMakeCharactersA5forPrint(){
+				makeCharactersA5(document.getElementById('nr').value, true)
+			}
+		</script>
+	</head>
+	<body>
+		<h1>OSR Character Generator</h1>
+		<form>
+			<input type='number' id='nr' min='1' value="1"/>
+			<input type='button' onclick='runMakeCharacters()' value='Business Cards!'/>
+			<input type='button' onclick='runMakeCharactersA5()' value='A5 sheets!'/>
+			<input type='button' onclick='runMakeCharactersA5forPrint()' value='A5 sheets with blank back side!'/>
+		</form>
+	</body>
+</html>
