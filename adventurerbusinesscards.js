@@ -8,7 +8,7 @@ function makeCharacters(nr){
 	})
 
 	for (let i=0; i<nr; i++){
-		// You can write your coordinates in mm if you divide by this motherfucker right here.
+		// You can write your coordinates in mm if you divide by this constant right here.
 		// source: https://github.com/MrRio/jsPDF/blob/ddbfc0f0250ca908f8061a72fa057116b7613e78/jspdf.js#L791
 		const mm = 72 / 25.4
 		let pc = new Character()
