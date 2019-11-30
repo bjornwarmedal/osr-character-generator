@@ -33,6 +33,63 @@ function tds() {
 	return d(6) + d(6) + d(6)
 }
 
+function setCharacterClass(character) {
+	let characterClasses = [
+		{
+			className: 'Fighter',
+			primeRequisites: ['STR']
+		},
+		{
+			className: 'Cleric',
+			primeRequisites: ['WIS']
+		},
+		{
+			className: 'Thief',
+			primeRequisites: ['DEX']
+		},
+		{
+			className: 'Magic-User',
+			primeRequisites: ['INT']
+		},
+		{
+			className: 'Elf',
+			primeRequisites: ['STR', 'INT'],
+			requirements: [
+				{
+					attribute: 'INT',
+					minimumValue: 9
+				}
+			]
+		},
+		{
+			className: 'Dwarf',
+			primeRequisites: ['STR'],
+			requirements: [
+				{
+					attribute: 'CON',
+					minimumValue: 9
+				}
+			]
+		},
+		{
+			className: 'Halfling',
+			primeRequisites: ['STR', 'DEX'],
+			requirements: [
+				{
+					attribute: 'DEX',
+					minimumValue: 9
+				},
+				{
+					attribute: 'CON',
+					minimumValue: 9
+				}
+			]
+		},
+	]
+
+	character.charclass = choice(characterClasses, 1)[0].className
+}
+
 function Character() {
 	this.name = getName()
 
@@ -41,8 +98,7 @@ function Character() {
 		this.attributes[attribute] = tds()
 	}
 
-	var charclass = choice(['Fighter', 'Magic-User', 'Thief', 'Cleric', 'Elf', 'Dwarf', 'Halfling'], 1)
-	this.charclass = charclass[0] // because choice returns an array with one element
+	setCharacterClass(this)
 
 	switch (this.charclass) {
 		case 'Fighter': this.hd = 8; break;
