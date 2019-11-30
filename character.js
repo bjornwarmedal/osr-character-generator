@@ -197,4 +197,6 @@ function Character() {
 	} else {
 		this.stuff = this.stuff.concat(choice(items, 4))
 	}
+
+	this.money = (d(8) + d(8) + d(8)) * 10 // Starting capital in gp
 }
