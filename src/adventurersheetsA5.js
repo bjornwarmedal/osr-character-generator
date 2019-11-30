@@ -1,3 +1,6 @@
+import * as jsPDF from 'jspdf'
+import Character from './Character'
+
 function writeCharacterInfo(doc, pc) {
 	doc.setFont('times', 'bold')
 	doc.setFontSize(20)
@@ -18,7 +21,7 @@ function isSpellcaster(pc) {
 
 function writeCharacterAttributes(doc, pc) {
 	let j = 0
-	for (attribute in pc.attributes) {
+	for (const attribute in pc.attributes) {
 		doc.text(attribute, 10, 1.8 + j * 0.8)
 		doc.text(pc.attributes[attribute] + '', 12, 1.8 + j * 0.8, 'right')
 		j++
@@ -44,7 +47,7 @@ function writeSpells(doc, pc) {
 	}
 }
 
-function makeCharactersA5(nr, blankbackpage) {
+export default function makeCharactersA5(nr, blankbackpage) {
 	var doc = new jsPDF({
 		orientation: 'portrait',
 		unit: 'cm',
