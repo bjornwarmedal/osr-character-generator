@@ -17,13 +17,11 @@ function isSpellcaster(pc) {
 }
 
 function writeCharacterAttributes(doc, pc) {
-	var attributes = ['STR', 'DEX', 'CON', 'INT', 'WIS', 'CHA']
-	for (var j = 0; j < attributes.length; j++) {
-		doc.text(attributes[j], 10, 1.8 + j * 0.8)
-	}
-	attributes = [pc.str + '', pc.dex + '', pc.con + '', pc.inn + '', pc.wis + '', pc.cha + '']
-	for (var j = 0; j < attributes.length; j++) {
-		doc.text(attributes[j], 12, 1.8 + j * 0.8, 'right')
+	let j = 0
+	for (attribute in pc.attributes) {
+		doc.text(attribute, 10, 1.8 + j * 0.8)
+		doc.text(pc.attributes[attribute] + '', 12, 1.8 + j * 0.8, 'right')
+		j++
 	}
 }
 

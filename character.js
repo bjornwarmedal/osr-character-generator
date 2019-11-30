@@ -36,12 +36,10 @@ function tds() {
 function Character() {
 	this.name = getName()
 
-	this.str = tds()
-	this.dex = tds()
-	this.con = tds()
-	this.inn = tds() // because "int" is a keyword
-	this.wis = tds()
-	this.cha = tds()
+	this.attributes = {}
+	for (attribute of ['STR', 'DEX', 'CON', 'INT', 'WIS', 'CHA']) {
+		this.attributes[attribute] = tds()
+	}
 
 	var charclass = choice(['Fighter', 'Magic-User', 'Thief', 'Cleric', 'Elf', 'Dwarf', 'Halfling'], 1)
 	this.charclass = charclass[0] // because choice returns an array with one element
@@ -59,17 +57,17 @@ function Character() {
 
 	this.level = 1 // only support this for now
 
-	if (this.con == 3) {
+	if (this.attributes['CON'] == 3) {
 		this.hp = Math.max(1, d(this.hd) - 3)
-	} else if (this.con < 6) {
+	} else if (this.attributes['CON'] < 6) {
 		this.hp = Math.max(1, d(this.hd) - 2)
-	} else if (this.con < 9) {
+	} else if (this.attributes['CON'] < 9) {
 		this.hp = Math.max(1, d(this.hd) - 1)
-	} else if (this.con < 13) {
+	} else if (this.attributes['CON'] < 13) {
 		this.hp = d(this.hd)
-	} else if (this.con < 16) {
+	} else if (this.attributes['CON'] < 16) {
 		this.hp = d(this.hd) + 1
-	} else if (this.con < 18) {
+	} else if (this.attributes['CON'] < 18) {
 		this.hp = d(this.hd) + 2
 	} else {
 		this.hp = d(this.hd) + 3

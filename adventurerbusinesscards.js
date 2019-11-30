@@ -30,12 +30,11 @@ function makeCharacters(nr){
 
 		doc.text('Armor: ' + pc.armor, 5/mm, 36/mm)
 
-		doc.text(['STR', pc.str+''], 5/mm, 39/mm)
-		doc.text(['DEX', pc.dex+''], 12/mm, 39/mm)
-		doc.text(['CON', pc.con+''], 19/mm, 39/mm)
-		doc.text(['INT', pc.inn+''], 26/mm, 39/mm)
-		doc.text(['WIS', pc.wis+''], 33/mm, 39/mm)
-		doc.text(['CHA', pc.cha+''], 40/mm, 39/mm)
+		let j = 0
+		for (attribute in pc.attributes) {
+			doc.text([attribute, pc.attributes[attribute]+''], (5 + j)/mm, 39/mm)
+			j += 7
+		}
 
 		if(pc.spells.length > 0){
 			doc.text('Spells: '+pc.spells.join(', '), 5/mm, 48/mm)
