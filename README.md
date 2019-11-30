@@ -17,6 +17,8 @@ Import `names.js` and `character.js` into your web page. Calling the function `C
 
 Import `adventurerbusinesscards.js` or `adventurersheetsA5.js` into your HTML page and call `runMakeCharacters()` or `runMakeCharactersA5()` with a positive integer as argument to generate a pdf of that many characters in the chosen format. The latter library also has the function `runMakeCharactersA5forPrint()` which adds a blank page after each character, creating a pdf ready for print.
 
+The simplest way to generate a few characters is to clone this repo and open the file demo.html in your browser.
+
 ## Dependencies
 
 The character generation is self-sufficient, but the two libraries for creating pdfs rely on [jsPDF][].
