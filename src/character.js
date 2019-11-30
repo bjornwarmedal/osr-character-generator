@@ -1,10 +1,13 @@
+import firstnames from './firstnames'
+import lastnames from './lastnames'
+
 // Returns an array consisting of a random selection of elements from "array"
-function choice(array, nrofelements) {
+function choice(array, nrOfElements) {
 	var arrayclone = array.slice(0)
 	var choices = []
 	var randomindex = 0
 
-	for (var i = 0; i < nrofelements; i++) {
+	for (var i = 0; i < nrOfElements; i++) {
 		randomindex = rand(arrayclone.length)
 		choices.push(arrayclone[randomindex])
 		arrayclone.splice(randomindex, 1)
@@ -90,11 +93,11 @@ function setCharacterClass(character) {
 	character.charclass = choice(characterClasses, 1)[0].className
 }
 
-function Character() {
+export default function Character() {
 	this.name = getName()
 
 	this.attributes = {}
-	for (attribute of ['STR', 'DEX', 'CON', 'INT', 'WIS', 'CHA']) {
+	for (const attribute of ['STR', 'DEX', 'CON', 'INT', 'WIS', 'CHA']) {
 		this.attributes[attribute] = tds()
 	}
 

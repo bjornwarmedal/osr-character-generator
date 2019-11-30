@@ -1,6 +1,7 @@
+import * as jsPDF from 'jspdf'
+import Character from './Character'
 
-function makeCharacters(nr){
-
+export default function makeCharacters(nr){
 	let doc = new jsPDF({
 	  orientation: 'landscape',
 	  unit: 'mm',
@@ -31,7 +32,7 @@ function makeCharacters(nr){
 		doc.text('Armor: ' + pc.armor, 5/mm, 36/mm)
 
 		let j = 0
-		for (attribute in pc.attributes) {
+		for (const attribute in pc.attributes) {
 			doc.text([attribute, pc.attributes[attribute]+''], (5 + j)/mm, 39/mm)
 			j += 7
 		}
