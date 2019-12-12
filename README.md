@@ -1,6 +1,8 @@
 # OSR Character Generator
 Javascript libraries for generating characters for tabletop rpgs similar to early versions of the first rpg.
 
+Try it by cloning the project and opening dist/index.html in your browser!
+
 ## Creating a Character
 
 Import `main.js` into your web page. Calling the function `Character()` returns a Character object, which contains the necessary stats for an OSR character:
@@ -16,8 +18,6 @@ Import `main.js` into your web page. Calling the function `Character()` returns 
 ## Printing a Character Sheet
 
 Importing `main.js` into your HTML page and calling `runMakeCharacters()` or `runMakeCharactersA5()` with a positive integer as argument will generate a pdf of that many characters in the chosen format. Also exposed is `runMakeCharactersA5forPrint()` which adds a blank page after each character, creating a pdf ready for print.
-
-The simplest way to generate a few characters is to clone this repo and open the file demo.html in your browser.
 
 ## Dependencies
 
