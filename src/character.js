@@ -1,3 +1,4 @@
+import { d, tds } from './dice_functions'
 import firstnames from './firstnames'
 import lastnames from './lastnames'
 
@@ -21,19 +22,9 @@ function rand(max) {
 	return Math.floor(Math.random() * max)
 }
 
-// Returns a random integer x such that 1 <= x <= sides (simulating the roll of a die)
-function d(sides) {
-	return Math.ceil(Math.random() * sides)
-}
-
 // Returns a string "Firstname Lastname"
 function getName() {
 	return firstnames[rand(firstnames.length)] + " " + lastnames[rand(lastnames.length)]
-}
-
-// 3d6
-function tds() {
-	return d(6) + d(6) + d(6)
 }
 
 function setCharacterClass(character) {
