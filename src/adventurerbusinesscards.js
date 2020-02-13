@@ -1,5 +1,5 @@
 import * as jsPDF from 'jspdf'
-import Character from './Character'
+import Character from './character'
 
 export default function makeCharacters(nr){
 	let doc = new jsPDF({
