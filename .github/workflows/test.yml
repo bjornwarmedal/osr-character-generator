@@ -1,0 +1,14 @@
+name: Tests
+on: [pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Testing
+      uses: actions/setup-node@v1
+    - run: npm install
+    - run: npm run build --if-present
+    - run: npm test

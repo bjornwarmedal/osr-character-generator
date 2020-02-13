@@ -1,5 +1,5 @@
 import * as jsPDF from 'jspdf'
-import Character from './Character'
+import Character from './character'
 
 function writeCharacterInfo(doc, pc) {
 	doc.setFont('times', 'bold')
