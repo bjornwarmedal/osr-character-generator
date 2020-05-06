@@ -1,4 +1,5 @@
-import { d, tds } from './dice_functions'
+import attributes from './attributes'
+import { d } from './dice_functions'
 import firstnames from './firstnames'
 import lastnames from './lastnames'
 
@@ -86,11 +87,7 @@ function setCharacterClass(character) {
 
 export default function Character() {
 	this.name = getName()
-
-	this.attributes = {}
-	for (const attribute of ['STR', 'DEX', 'CON', 'INT', 'WIS', 'CHA']) {
-		this.attributes[attribute] = tds()
-	}
+	this.attributes = attributes();
 
 	setCharacterClass(this)
 
