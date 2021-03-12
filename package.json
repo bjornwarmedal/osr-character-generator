@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@types/jest": "^24.0.23",
-    "jspdf": "^1.5.3"
+    "jspdf": "^2.3.1"
   },
   "devDependencies": {
     "@babel/core": "^7.7.5",
